@@ -7,6 +7,8 @@ target 'GHTrendingRepositories' do
 
   # Pods for GHTrendingRepositories
   pod 'ReactiveCocoa'
+  pod 'SDWebImage'
+  pod 'Down'
 
   target 'GHTrendingRepositoriesTests' do
     inherit! :search_paths

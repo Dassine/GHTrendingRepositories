@@ -14,16 +14,10 @@ struct Repositories: Codable {
 
 struct Repository: Codable {
     
-    var id: Int
     var name: String?
-    var full_name: String?
     var owner: Owner?
-    var `private`: Bool?
-    var html_url: String?
     var description: String?
-    var fork: Bool?
-    var url: String?
-    var stargazers_count: Int?
-    var forks_count: Int?
-    var score: Float?
+    var stargazers_count: Int
+    var forks_count: Int
+    
 }

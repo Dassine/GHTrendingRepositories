@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231860AF2138AC0100B7FFD1 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231860AE2138AC0100B7FFD1 /* ReadMe.swift */; };
 		23ECD3942133F93100E72EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3932133F93100E72EDF /* AppDelegate.swift */; };
-		23ECD3962133F93100E72EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3952133F93100E72EDF /* ViewController.swift */; };
 		23ECD3992133F93100E72EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23ECD3972133F93100E72EDF /* Main.storyboard */; };
-		23ECD39C2133F93100E72EDF /* GHTrendingRepositories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD39A2133F93100E72EDF /* GHTrendingRepositories.xcdatamodeld */; };
 		23ECD39E2133F93200E72EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23ECD39D2133F93200E72EDF /* Assets.xcassets */; };
 		23ECD3A12133F93200E72EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23ECD39F2133F93200E72EDF /* LaunchScreen.storyboard */; };
 		23ECD3AC2133F93200E72EDF /* GHTrendingRepositoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3AB2133F93200E72EDF /* GHTrendingRepositoriesTests.swift */; };
 		23ECD3B72133F93200E72EDF /* GHTrendingRepositoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3B62133F93200E72EDF /* GHTrendingRepositoriesUITests.swift */; };
 		23ECD3CA2133FC3600E72EDF /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3C92133FC3600E72EDF /* RepositoriesViewModel.swift */; };
-		23ECD3CC2133FC5200E72EDF /* RepositoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3CB2133FC5200E72EDF /* RepositoriesTableViewController.swift */; };
+		23ECD3CC2133FC5200E72EDF /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3CB2133FC5200E72EDF /* RepositoriesViewController.swift */; };
 		23ECD3CE2133FC6D00E72EDF /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3CD2133FC6D00E72EDF /* RepositoryDetailViewController.swift */; };
 		23ECD3D02133FC7900E72EDF /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3CF2133FC7900E72EDF /* RepositoryDetailViewModel.swift */; };
 		23ECD3D22133FC8700E72EDF /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECD3D12133FC8700E72EDF /* Repository.swift */; };
@@ -47,11 +46,10 @@
 
 /* Begin PBXFileReference section */
 		1FF4995A05C720D9D297A0DE /* Pods-GHTrendingRepositories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHTrendingRepositories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GHTrendingRepositories/Pods-GHTrendingRepositories.debug.xcconfig"; sourceTree = "<group>"; };
+		231860AE2138AC0100B7FFD1 /* ReadMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 		23ECD3902133F93100E72EDF /* GHTrendingRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHTrendingRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23ECD3932133F93100E72EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		23ECD3952133F93100E72EDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23ECD3982133F93100E72EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		23ECD39B2133F93100E72EDF /* GHTrendingRepositories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GHTrendingRepositories.xcdatamodel; sourceTree = "<group>"; };
 		23ECD39D2133F93200E72EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23ECD3A02133F93200E72EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23ECD3A22133F93200E72EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,7 +60,7 @@
 		23ECD3B62133F93200E72EDF /* GHTrendingRepositoriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTrendingRepositoriesUITests.swift; sourceTree = "<group>"; };
 		23ECD3B82133F93200E72EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23ECD3C92133FC3600E72EDF /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
-		23ECD3CB2133FC5200E72EDF /* RepositoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewController.swift; sourceTree = "<group>"; };
+		23ECD3CB2133FC5200E72EDF /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		23ECD3CD2133FC6D00E72EDF /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		23ECD3CF2133FC7900E72EDF /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
 		23ECD3D12133FC8700E72EDF /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -136,12 +134,10 @@
 				23ECD3C42133FA8600E72EDF /* Models */,
 				23ECD3C62133FB2100E72EDF /* Modules */,
 				23ECD3932133F93100E72EDF /* AppDelegate.swift */,
-				23ECD3952133F93100E72EDF /* ViewController.swift */,
 				23ECD3972133F93100E72EDF /* Main.storyboard */,
 				23ECD39D2133F93200E72EDF /* Assets.xcassets */,
 				23ECD39F2133F93200E72EDF /* LaunchScreen.storyboard */,
 				23ECD3A22133F93200E72EDF /* Info.plist */,
-				23ECD39A2133F93100E72EDF /* GHTrendingRepositories.xcdatamodeld */,
 			);
 			path = GHTrendingRepositories;
 			sourceTree = "<group>";
@@ -169,6 +165,7 @@
 			children = (
 				23ECD3D12133FC8700E72EDF /* Repository.swift */,
 				23ECD3D52133FD9400E72EDF /* Owner.swift */,
+				231860AE2138AC0100B7FFD1 /* ReadMe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				23ECD3D92133FEF500E72EDF /* RepositoryTableViewCell.swift */,
-				23ECD3CB2133FC5200E72EDF /* RepositoriesTableViewController.swift */,
+				23ECD3CB2133FC5200E72EDF /* RepositoriesViewController.swift */,
 				23ECD3C92133FC3600E72EDF /* RepositoriesViewModel.swift */,
 			);
 			path = "Repositories List";
@@ -424,15 +421,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GHTrendingRepositories/Pods-GHTrendingRepositories-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -446,17 +447,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23ECD3962133F93100E72EDF /* ViewController.swift in Sources */,
 				23ECD3CE2133FC6D00E72EDF /* RepositoryDetailViewController.swift in Sources */,
 				23ECD3D02133FC7900E72EDF /* RepositoryDetailViewModel.swift in Sources */,
 				23ECD3D62133FD9400E72EDF /* Owner.swift in Sources */,
 				23ECD3D22133FC8700E72EDF /* Repository.swift in Sources */,
-				23ECD3CC2133FC5200E72EDF /* RepositoriesTableViewController.swift in Sources */,
+				23ECD3CC2133FC5200E72EDF /* RepositoriesViewController.swift in Sources */,
 				23ECD3DA2133FEF500E72EDF /* RepositoryTableViewCell.swift in Sources */,
-				23ECD39C2133F93100E72EDF /* GHTrendingRepositories.xcdatamodeld in Sources */,
 				23ECD3CA2133FC3600E72EDF /* RepositoriesViewModel.swift in Sources */,
 				23ECD3D42133FCAF00E72EDF /* APIService.swift in Sources */,
 				23ECD3942133F93100E72EDF /* AppDelegate.swift in Sources */,
+				231860AF2138AC0100B7FFD1 /* ReadMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,19 +789,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		23ECD39A2133F93100E72EDF /* GHTrendingRepositories.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				23ECD39B2133F93100E72EDF /* GHTrendingRepositories.xcdatamodel */,
-			);
-			currentVersion = 23ECD39B2133F93100E72EDF /* GHTrendingRepositories.xcdatamodel */;
-			path = GHTrendingRepositories.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 23ECD3882133F93100E72EDF /* Project object */;
 }
