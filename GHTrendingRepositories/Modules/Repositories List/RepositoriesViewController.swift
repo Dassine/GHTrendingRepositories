@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import ReactiveCocoa
 import ReactiveSwift
 
@@ -51,18 +52,16 @@ class RepositoriesViewController: UIViewController {
         self.navigationItem.title = " "
     }
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(animated)
+        
         self.navigationItem.title = "Trending"
     }
     
     private func configureTableView() {
-        
         tableView.addSubview(self.refreshControl)
     }
 
     private func bindViewModel() {
-        
         viewModel.searchRepositorySignal <~ searchBar.reactive.continuousTextValues
 
         //Observe repositories update and reload the tablevie

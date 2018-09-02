@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 import ReactiveSwift
 import Result
 
@@ -52,12 +53,10 @@ class RepositoriesViewModel {
     }
     
     var numberOfCells: Int {
-        
         return cellViewModels.count
     }
     
     init( apiService: APIServiceProtocol = APIService()) {
-        
         self.apiService = apiService
         
         //Set the signals and observers
@@ -102,17 +101,15 @@ class RepositoriesViewModel {
     }
     
     func refresh() {
-        
         isRefreshing = true
         loadReposistory()
     }
     
     private func loadReposistory() {
-        
         apiService.fetchTrendingRepositories()
             .on(starting: { self.isLoading.value = true })
-            .flatMap(.latest, { (repos) -> SignalProducer<[Repository], NoError> in
-                return SignalProducer<[Repository], NoError>(value: repos)
+            .flatMap(.latest, { (repos) -> SignalProducer<[Repository], AnyError> in
+                return SignalProducer<[Repository], AnyError>(value: repos)
             })
             .on(completed: { self.isLoading.value = false })
             .observe(on: UIScheduler())
@@ -149,7 +146,7 @@ class RepositoriesViewModel {
     }
     
     func createCellViewModel(with repository: Repository) -> RepositoryCellViewModel {
-        return RepositoryCellViewModel(nameText: repository.name ?? "", scoreText: "\(repository.stargazers_count ) Star(s)", descriptionText: repository.description ?? "")
+        return RepositoryCellViewModel(nameText: repository.name ?? "", scoreText: "\(repository.stargazers_count) Star(s)", descriptionText: repository.description ?? "")
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> RepositoryCellViewModel {

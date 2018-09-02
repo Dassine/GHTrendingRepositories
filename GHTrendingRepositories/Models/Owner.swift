@@ -10,8 +10,6 @@ import Foundation
 
 struct Owner: Codable {
     
-    var id: Int
     var login: String?
     var avatar_url: String?
-    var url: String?
 }

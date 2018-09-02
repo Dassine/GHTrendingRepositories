@@ -37,7 +37,6 @@ class RepositoryDetailViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        
         //Set Navigation Title
         title = viewModel.title
         
@@ -77,7 +76,6 @@ class RepositoryDetailViewController: UIViewController {
     }
     
     func showError(error: String) {
-        
         let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)

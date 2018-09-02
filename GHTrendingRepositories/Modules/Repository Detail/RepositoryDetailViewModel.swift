@@ -13,8 +13,8 @@ import Result
 
 class RepositoryDetailViewModel {
     
-    private let apiService: APIService
-
+    let apiService: APIServiceProtocol
+    
     private let repository: Repository
     
     private let readMeUpdateObserver: Signal<String, NoError>.Observer
@@ -50,8 +50,7 @@ class RepositoryDetailViewModel {
         }()
     
     init(apiService: APIServiceProtocol = APIService(), repository: Repository) {
-        
-        self.apiService = apiService as! APIService
+        self.apiService = apiService
         self.repository = repository
         
         //Set the signals and observers
@@ -66,8 +65,8 @@ class RepositoryDetailViewModel {
         //Get ReadMe fo
         apiService.getReadMe(owner: repository.owner!.login!, repositoryName: repository.name!)
             .on(starting: { self.isLoading.value = true })
-            .flatMap(.latest) { (readMe) -> SignalProducer<ReadMe, NoError> in
-                return SignalProducer<ReadMe, NoError>(value: readMe)
+            .flatMap(.latest) { (readMe) -> SignalProducer<ReadMe, AnyError> in
+                return SignalProducer<ReadMe, AnyError>(value: readMe)
             }
             .on(completed: { self.isLoading.value = false })
             .observe(on: UIScheduler())

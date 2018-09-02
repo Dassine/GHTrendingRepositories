@@ -9,6 +9,7 @@
 import Foundation
 
 import ReactiveSwift
+import Result
 
 enum VendingMachineError: Error {
     case invalidSelection
@@ -16,30 +17,12 @@ enum VendingMachineError: Error {
     case outOfStock
 }
 
-struct APIServiceError: Error {
-
-    static var networkError = APIServiceError("Network connectivity error")
-    static var unknownError = APIServiceError("Unknown")
-    static var internalError = APIServiceError("Internal error")
-    
-    private var errorString: String
-    
-    init(_ string: String) {
-        errorString = string
-    }
-    
-    var localizedDescription: String {
-        return errorString
-    }
-}
-
 protocol APIServiceProtocol {
     
-    func fetchTrendingRepositories() -> SignalProducer<[Repository], APIServiceError>
-    func getReadMe(owner: String, repositoryName: String) -> SignalProducer<ReadMe, APIServiceError>
+    func fetchTrendingRepositories() -> SignalProducer<[Repository], AnyError>
+    func getReadMe(owner: String, repositoryName: String) -> SignalProducer<ReadMe, AnyError>
     
 }
-
 
 class APIService: APIServiceProtocol {
     
@@ -52,7 +35,7 @@ class APIService: APIServiceProtocol {
         }
     }
 
-    func fetchTrendingRepositories() -> SignalProducer<[Repository], APIServiceError> {
+    func fetchTrendingRepositories() -> SignalProducer<[Repository], AnyError> {
         
         return SignalProducer { observer, disposable in
             
@@ -66,7 +49,7 @@ class APIService: APIServiceProtocol {
             let urlString = "\(self.apiUrl)/search/repositories?q=created:>\(createdDate)&sort=stars&order=desc"
             let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
             guard let url = URL(string:encodedURLString) else {
-                observer.send(error: APIServiceError.internalError)
+                observer.send(error: Result<Any, AnyError>.error("URL Error") as! AnyError)
                 return
             }
             
@@ -75,7 +58,7 @@ class APIService: APIServiceProtocol {
                 //Notify about error
                 guard error == nil else {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.networkError)
+                        observer.send(error: error as! AnyError)
                     }
                     return
                 }
@@ -83,7 +66,7 @@ class APIService: APIServiceProtocol {
                 //Notify observer about the new data
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.unknownError)
+                        observer.send(error: error as! AnyError)
                     }
                     return
                 }
@@ -100,7 +83,7 @@ class APIService: APIServiceProtocol {
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.internalError)
+                        observer.send(error:error as! AnyError)
                     }
                 }
                 
@@ -108,7 +91,7 @@ class APIService: APIServiceProtocol {
         }
     }
     
-    func getReadMe(owner: String, repositoryName: String) -> SignalProducer<ReadMe, APIServiceError> {
+    func getReadMe(owner: String, repositoryName: String) -> SignalProducer<ReadMe, AnyError> {
         
         return SignalProducer { observer, disposable in
             
@@ -116,7 +99,7 @@ class APIService: APIServiceProtocol {
             let urlString = "\(self.apiUrl)/repos/\(owner)/\(repositoryName)/readme"
             let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
             guard let url = URL(string:encodedURLString) else {
-                observer.send(error: APIServiceError.internalError)
+                observer.send(error: Result<Any, AnyError>.error("URL Error") as! AnyError)
                 return
             }
             
@@ -125,7 +108,7 @@ class APIService: APIServiceProtocol {
                 //Notify about error
                 guard error == nil else {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.networkError)
+                        observer.send(error: error as! AnyError)
                     }
                     return
                 }
@@ -133,7 +116,7 @@ class APIService: APIServiceProtocol {
                 //Notify observer about the new data
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.unknownError)
+                        observer.send(error: error as! AnyError)
                     }
                     return
                 }
@@ -148,7 +131,7 @@ class APIService: APIServiceProtocol {
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        observer.send(error: APIServiceError.internalError)
+                        observer.send(error: error as! AnyError)
                     }
                 }
                 
